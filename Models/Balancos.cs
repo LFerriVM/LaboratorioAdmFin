@@ -1,14 +1,13 @@
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
 namespace Models;
 
-public class Itens
+public class Balancos
 {
     [Key]
     public int Id { get; set; }
-    public string Nome { get; set; }
-    public string Tipo{ get; set; }
+    public DateOnly DataCriacao { get; set; }
+    public double Valor { get; set; }
 
 }

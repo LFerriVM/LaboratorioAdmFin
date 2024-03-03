@@ -3,6 +3,7 @@ using System.IO;
 using System.Threading.Tasks.Dataflow;
 using Data;
 using Models;
+using Handlers;
 
 var db = new DataContext();
 
@@ -11,54 +12,70 @@ var db = new DataContext();
 System.Console.WriteLine("Insira o nome do arquivo a ser utilizado:");
 string nomeArquivo = Console.ReadLine();
 List<string> itens = [];
-menu();
+Menu();
 // Fim Area de Execucao Comum
 
 
-void InserirItem()
-{   
-    db.Add(new Itens { Nome = "aaaaa", Valor = 4125.15 });
-    db.SaveChanges();
-}
 
-void AlterarItem() { }
 
-void RemoverItem() { }
+void Menu() { }
 
-void SalvarItem() { }
-
-void menu()
+void MenuGeral()
 {
-    System.Console.WriteLine(
+    var itens = new ItensHandler();
+    Console.WriteLine(
         "###########################\n" +
-        "## 1 - Inserir Item      ##\n" +
-        "## 2 - Alterar Item      ##\n" +
-        "## 3 - Remover Item      ##\n" +
-        "## 4 - Salvar Arquivo    ##\n" +
-        "## 5 - Fechar            ##\n" +
+        "## 1 - Itens             ##\n" +
+        "## 2 - Balanços          ##\n" +
+        "###########################\n" +
+        "## 0 - Fechar            ##\n" +
         "###########################");
     int selector = Convert.ToInt32(Console.ReadLine());
-    System.Console.WriteLine(nomeArquivo);
     switch (selector)
     {
         case 1:
-            InserirItem();
+            itens.MenuItens();
             break;
         case 2:
-            AlterarItem();
+            MenuBalanco();
             break;
-        case 3:
-            RemoverItem();
-            break;
-        case 4:
-            SalvarItem();
-            break;
-        case 5:
+        case 0:
             Environment.Exit(0);
             break;
         default:
             Console.Clear();
-            menu();
+            MenuGeral();
             break;
     }
 }
+
+void MenuBalanco()
+{
+
+    Console.WriteLine(
+            "################################\n" +
+            "## 1 - Criar novo balanço     ##\n" +
+            "## 2 - Abrir balanço          ##\n" +
+            "################################\n" +
+            "## 0 - Fechar                 ##\n" +
+            "#################################");
+    int selector = Convert.ToInt32(Console.ReadLine());
+    switch (selector)
+    {
+        case 1:
+            CriarBalanco();
+            break;
+        case 2:
+            AbrirBalanco();
+            break;
+        case 0:
+            Environment.Exit(0);
+            break;
+        default:
+            Console.Clear();
+            MenuBalanco();
+            break;
+    }
+
+}
+
