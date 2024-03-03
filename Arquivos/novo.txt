@@ -6,20 +6,20 @@ ANC Ve�culos 30000.00
 ANC Im�veis 70000.00
 ANC Direitos Autorais 10000.00
 ANC Participa��o em Outras Empresas 5000.00
-ANC Aplica��es de Longo Prazo 00.00
-ANC Equipamentos/M�quinas 00.00
-ANC Marcas/Patentes 00.00
-ANC Direitos Autorais 00.00
+ANC Aplica��es de Longo Prazo 0.00
+ANC Equipamentos/M�quinas 0.00
+ANC Marcas/Patentes 0.00
+ANC Direitos Autorais 0.00
 PC Fornecedores a Pagar 6000.00
 PC Empr�stimos/Financiamentos de Curto Prazo 4000.00
 PC Impostos a Pagar 2000.00
-PC Obriga��es Sociais e Trabalhistas 00.00
+PC Obriga��es Sociais e Trabalhistas 0.00
 PNC Empr�stimos/Financiamentos de Longo Prazo 50000.00
-PNC T�tulos a Pagar de Longo Prazo 00.00
+PNC T�tulos a Pagar de Longo Prazo 0.00
 PL Capital Social 28000.00
 PL Lucros Acumulados 40000.00
 PL Reservas de Capital 10000.00
-PL Reservas de Lucros 00.00
+PL Reservas de Lucros 0.00
 
-TOTAL ATIVO = 140000.00
+TOTAL ATIVO = 140000.20
 TOTAL PASSIVO + PATRIMONIO LIQUIDO = 140000.00

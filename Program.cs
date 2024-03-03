@@ -1,5 +1,4 @@
 ﻿using admfin.Services;
-using Data;
 using Microsoft.Extensions.DependencyInjection;
 
 public class Program
@@ -11,13 +10,12 @@ public class Program
         var serviceProvider = serviceCollection.BuildServiceProvider();
         Console.WriteLine("Running");
         var menuService = serviceProvider.GetService<MenuService>();
-        menuService.Menu();
+        menuService.MenuBalanco();
     }
 
     public static void ConfigureServices(IServiceCollection services)
     {
         services.AddScoped<ItensService>();
         services.AddScoped<MenuService>();
-        services.AddScoped<DataContext>();
     }
 }

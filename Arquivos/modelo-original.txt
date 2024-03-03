@@ -1,0 +1,25 @@
+AC Caixa 5000.00
+AC Estoque 7000.00 
+AC Aplicações de Curto Prazo 3000.00 
+AC Contas a Receber 10000.00
+ANC Veículos 30000.00
+ANC Imóveis 70000.00
+ANC Direitos Autorais 10000.00
+ANC Participação em Outras Empresas 5000.00
+ANC Aplicações de Longo Prazo 00.00
+ANC Equipamentos/Máquinas 00.00
+ANC Marcas/Patentes 00.00
+ANC Direitos Autorais 00.00
+PC Fornecedores a Pagar 6000.00
+PC Empréstimos/Financiamentos de Curto Prazo 4000.00
+PC Impostos a Pagar 2000.00
+PC Obrigações Sociais e Trabalhistas 00.00
+PNC Empréstimos/Financiamentos de Longo Prazo 50000.00
+PNC Títulos a Pagar de Longo Prazo 00.00
+PL Capital Social 28000.00
+PL Lucros Acumulados 40000.00
+PL Reservas de Capital 10000.00
+PL Reservas de Lucros 00.00
+
+TOTAL ATIVO = 140000.00
+TOTAL PASSIVO + PATRIMONIO LIQUIDO = 140000.00
