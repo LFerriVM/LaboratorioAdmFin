@@ -17,16 +17,19 @@ namespace admfin.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.2");
 
-            modelBuilder.Entity("Models.Balancos", b =>
+            modelBuilder.Entity("admfin.Models.Balanco", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateOnly>("DataCriacao")
+                    b.Property<DateTime>("DataCriacao")
                         .HasColumnType("TEXT");
 
-                    b.Property<double>("Valor")
+                    b.Property<string>("Nome")
+                        .HasColumnType("TEXT");
+
+                    b.Property<double?>("Valor")
                         .HasColumnType("REAL");
 
                     b.HasKey("Id");
@@ -34,57 +37,44 @@ namespace admfin.Migrations
                     b.ToTable("Balancos");
                 });
 
-            modelBuilder.Entity("Models.Itens", b =>
+            modelBuilder.Entity("admfin.Models.Item", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("FkBalanco")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Nome")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Tipo")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Tipo")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<double>("Valor")
+                        .HasColumnType("REAL");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("FkBalanco");
 
                     b.ToTable("Itens");
                 });
 
-            modelBuilder.Entity("Models.ItensBalancos", b =>
+            modelBuilder.Entity("admfin.Models.Item", b =>
                 {
-                    b.Property<int>("IdItem")
-                        .HasColumnType("INTEGER");
+                    b.HasOne("admfin.Models.Balanco", "Balanco")
+                        .WithMany("Itens")
+                        .HasForeignKey("FkBalanco")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Property<int>("IdBalanco")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<double>("ValorItem")
-                        .HasColumnType("REAL");
-
-                    b.HasKey("IdItem", "IdBalanco");
-
-                    b.HasIndex("IdBalanco");
-
-                    b.ToTable("ItensBalancos");
+                    b.Navigation("Balanco");
                 });
 
-            modelBuilder.Entity("Models.ItensBalancos", b =>
+            modelBuilder.Entity("admfin.Models.Balanco", b =>
                 {
-                    b.HasOne("Models.Balancos", "Balancos")
-                        .WithMany()
-                        .HasForeignKey("IdBalanco")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Models.Itens", "Itens")
-                        .WithMany()
-                        .HasForeignKey("IdItem")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Balancos");
-
                     b.Navigation("Itens");
                 });
 #pragma warning restore 612, 618

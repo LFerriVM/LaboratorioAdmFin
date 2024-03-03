@@ -1,18 +1,18 @@
 using Data;
-using Models;
 
-namespace Handlers;
+namespace admfin.Services;
 
-public class ItensHandler
+public class ItensService
 {
     private DataContext _db;
 
-    public ItensHandler(DataContext db)
+    public ItensService(DataContext db)
     {
         _db = db;
     }
 
-    public ItensHandler(){
+    public ItensService()
+    {
 
     }
 
@@ -27,9 +27,9 @@ public class ItensHandler
     void RemoverItem() { }
 
     void SalvarItem() { }
-    public static void MenuItens()
+    public void MenuItens()
     {
-        var itens = new ItensHandler();
+        var itens = new ItensService();
         Console.WriteLine(
             "###########################\n" +
             "## 1 - Inserir Item      ##\n" +
